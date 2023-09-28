@@ -1,6 +1,8 @@
 from collidable import Collidable
 from turtle import Turtle
 import random
+from screen_constants import *
+
 
 class Ball(Collidable):
     def __init__(self, snake, score):
@@ -9,13 +11,13 @@ class Ball(Collidable):
         self.ball = Turtle(shape="circle")
         self.ball.penup()
         self.ball.color("white")
-        self.ball.setx(random.randint(-280, 280))
-        self.ball.sety(random.randint(-280, 280))
+        self.ball.setx(random.randint(LEFT_EDGE + 20, RIGHT_EDGE - 20))
+        self.ball.sety(random.randint(DOWN_EDGE + 20, UP_EDGE - 20))
 
 
     def change_position(self):
-        self.ball.setx(random.randint(-280, 280))
-        self.ball.sety(random.randint(-280, 280))
+        self.ball.setx(random.randint(LEFT_EDGE + 20, RIGHT_EDGE - 20))
+        self.ball.sety(random.randint(DOWN_EDGE + 20, UP_EDGE - 20))
 
     def check_hit(self):
         snake_head = self.eater_snake.get_head()

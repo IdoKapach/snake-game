@@ -2,11 +2,11 @@ from turtle import Screen
 from snake import Snake
 from ball import  Ball
 from score import Score
-
+from screen_constants import *
 class Game():
     def __init__(self):
         self.screen = Screen()
-        self.screen.setup(600, 600)
+        self.screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
         self.screen.bgcolor("black")
         self.screen.tracer(0)
         self.screen.listen()
