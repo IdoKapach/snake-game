@@ -7,20 +7,21 @@ from screen_constants import *
 STARTING_NUM_OF_RECTANGLES = 3
 SNAKE_STEP = 20
 class Snake(Collidable):
-    def __init__(self):
+    def __init__(self, color):
         super().__init__()
+        self.color = color
         self.time_per_iteration = 0.1
         self.rectangles_lst = []
         for i in range(STARTING_NUM_OF_RECTANGLES):
             rectangle = Turtle(shape="square")
-            rectangle.color("white")
+            rectangle.color(self.color)
             rectangle.penup()
             self.rectangles_lst.append(rectangle)
         self.len = len(self.rectangles_lst)
 
     def add_rec(self):
         rectangle = Turtle(shape="square")
-        rectangle.color("white")
+        rectangle.color(self.color)
         rectangle.penup()
         rectangle.goto(self.rectangles_lst[self.len - 1].xcor(), self.rectangles_lst[self.len - 1].ycor())
         self.rectangles_lst.append(rectangle)

@@ -28,7 +28,7 @@ class Score():
         announcer.hideturtle()
         announcer.color("white")
         announcer.goto(X_CENTER, -100)
-        announcer.write(arg=f"press 'r' for restart and 'p' for exit",
+        announcer.write(arg=f"press 'space' for restart and 'q' for exit",
                              move=False, align="center", font=("arial", 20, "normal"))
 
 
